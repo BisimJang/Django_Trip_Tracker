@@ -18,16 +18,17 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-
+from .views import SignUpView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ('', include('trip.urls')),
     path ('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup/', SignUpView.as_view(),  name='signup'),
 ]
 
 #accounts/login/ [names='login']
-#accounts/logout/ [name='logout']
+#  accounts/logout/ [name='logout']
 #accounts/password_change/ [name='password_change']
 #accounts/password_change/done/ [name=password_change_done']
 #accounts/password_reset/ [name='password_reset']

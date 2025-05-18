@@ -132,3 +132,4 @@ MEDIA_ROOT =os.path.join(BASE_DIR,'/media/') #documents/file-xyz.png
 
 #where should the user go after login - if not next
 LOGIN_REDIRECT_URL = 'trip-list'
+LOGOUT_REDIRECT_URL = 'logout'
