@@ -42,7 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #local apps
-    'trip'
+    'trip',
+    
+    #3rd party app
+    "crispy_forms",
+    "crispy_tailwind",
 ]
 
 MIDDLEWARE = [
@@ -133,3 +137,6 @@ MEDIA_ROOT =os.path.join(BASE_DIR,'/media/') #documents/file-xyz.png
 #where should the user go after login - if not next
 LOGIN_REDIRECT_URL = 'trip-list'
 LOGOUT_REDIRECT_URL = 'logout'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_TEMPLATE_PACK = "tailwind"

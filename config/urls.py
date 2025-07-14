@@ -18,13 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import SignUpView
+from .views import SignUpView, CustomLogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ('', include('trip.urls')),
     path ('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup/', SignUpView.as_view(),  name='signup'),
+    path('logout/', CustomLogoutView.as_view(next_page='login'), name='logout'),
 ]
 
 #accounts/login/ [names='login']
